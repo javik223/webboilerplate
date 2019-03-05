@@ -203,9 +203,13 @@ $paddings: (10, 20, 30, 40, 50, 60, 70, 80, 90, 100);
 }
 
 .around-town {
+  .slick-slide {
+    max-width: 100%;
+  }
   a {
-    float: left;
+    // float: left;
     text-align: center;
+    max-width: 100%;
   }
   img {
     max-height: rem-calc(400);
@@ -330,6 +334,29 @@ $paddings: (10, 20, 30, 40, 50, 60, 70, 80, 90, 100);
 
     .icon-arrow-right {
       right: 0;
+    }
+  }
+}
+
+.around-town__arrows {
+  @include breakpoint(small only) {
+    .icon {
+      background-color: $blue;
+      width: rem-calc(50);
+      height: rem-calc(50);
+      border-radius: 50%;
+      transform: scale(0.8);
+      opacity: 0.5;
+    }
+  }
+
+  @include breakpoint(medium up) {
+    .icon-arrow-right {
+      right: rem-calc(60);
+    }
+
+    .icon-arrow-left {
+      left: rem-calc(60);
     }
   }
 }

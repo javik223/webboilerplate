@@ -39,11 +39,15 @@ $(document).ready(function () {
   $(".around-town").slick({
     infinite: true,
     slidesToShow: 1,
+    slidesToScroll: 1,
+    fade: true,
     dots: true,
     autoplay: false,
     autoplaySpeed: 2000,
     prevArrow: $(".around-town__arrows .icon-arrow-left"),
     nextArrow: $(".around-town__arrows .icon-arrow-right"),
+    adaptiveHeight: true,
+    centerMode: true
   });
 
   // Navigation Menu
@@ -214,5 +218,8 @@ $(document).ready(function () {
     margins: 3
   });
   $(".event-gallery").lightGallery();
-  // $(".around-town").lightGallery();
+  $(".around-town").lightGallery({
+    thumbnail: true,
+    selector: '.around-town__item'
+  });
 })

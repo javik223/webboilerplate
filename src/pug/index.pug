@@ -75,7 +75,7 @@ html(lang="en")
     include ./_quotes
 
     .grid-x.padding-top-60.text-center.quotes
-      .grid-x.small-12
+      .grid-x.small-12#reviews
         h3.small-12.text-center.text-spaced.text-serif What they said
         h1.icon.icon-quote.quote-symbol.padding-20(data-start="transform:scale(0.7);" data-top-bottom="transform:scale(1);")
 
@@ -160,7 +160,7 @@ html(lang="en")
         h3.small-12.text-center.text-spaced.text-serif Gallery
         h3 &nbsp;
         p.small-12.text-center.text-spaced.text-serif Around town
-        .grid-container
+        .grid-container.full
           .grid-x.relative
             .cell.medium-12.around-town
               include ./_around-town
@@ -168,13 +168,13 @@ html(lang="en")
               each arpicture in aroundTownPictures
                 -
                   let pictureSrc = `/assets/img/gallery/around-town/${arpicture.fileName}`
-                a(title=arpicture.title)
+                a(href=arpicture.url title=arpicture.title).around-town__item
                   img(src=pictureSrc, alt=arpicture.title)
                   p= arpicture.title
             .around-town__arrows
               div.icon.icon-arrow-left
               div.icon.icon-arrow-right
-    .grid-x.padding-top-60.text-center.quotes
+    .grid-x.padding-top-60.text-center.quotes#book-launch
       .grid-x.small-12
         p.small-12.text-center.text-spaced.text-serif Book Launch
         .cell.medium-12.event-gallery
@@ -237,8 +237,9 @@ html(lang="en")
       .grid-x.cell.padding-top-50
         p
           small Designed with love by: <br>
-            span.icon.icon-witts-and-stratts
-            | &nbsp; Witts & Stratts
+            a(href="https://www.witts-stratts.com")
+              span.icon.icon-witts-and-stratts
+              | &nbsp; Witts & Stratts
 
   script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js")
   script(src="https://unpkg.com/aos@2.3.1/dist/aos.js")
