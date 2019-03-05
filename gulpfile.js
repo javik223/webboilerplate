@@ -9,6 +9,7 @@ const autoprefixer = require('gulp-autoprefixer');
 const sourcemaps = require('gulp-sourcemaps');
 const iconfont = require('gulp-iconfont');
 const iconfontCSS = require('gulp-iconfont-css');
+const purgecss = require('gulp-purgecss');
 
 /* ---------------------------------------------------------------
  *  Settings
@@ -122,6 +123,17 @@ gulp.task('fonts', () => {
   return gulp
     .src(`${settings.fonts.src}/**/*.*`)
     .pipe(gulp.dest(settings.fonts.dist));
+});
+
+// purge CSS
+gulp.task('purgecss', () => {
+  return gulp
+    .src(`${settings.sass.dist}/**/*.css`)
+    .pipe(purgecss({
+      content: [`${settings.pug.dist}/**/*.html`, `${settings.js.dist}/**/*.js`],
+      whitelist: ['slick-dots', 'slick-active']
+    }))
+    .pipe(gulp.dest(settings.sass.dist));
 });
 
 

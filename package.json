@@ -31,10 +31,12 @@
     "gulp-pub": "^1.1.2",
     "gulp-pug": "^3.3.0",
     "gulp-pug2": "^0.0.2",
+    "gulp-purgecss": "^1.1.1",
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.6.1",
     "gulp-util": "^3.0.8",
     "html-webpack-plugin": "^3.2.0",
+    "purgecss": "^1.1.0",
     "webpack": "^4.12.1",
     "webpack-cli": "^3.0.8"
   },

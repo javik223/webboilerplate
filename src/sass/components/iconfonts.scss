@@ -1,0 +1,175 @@
+@font-face {
+  font-family: "iconfonts";
+  src: url('/assets/fonts/iconfonts.eot');
+  src: url('/assets/fonts/iconfonts.eot?#iefix') format('eot'),
+    url('/assets/fonts/iconfonts.woff2') format('woff2'),
+    url('/assets/fonts/iconfonts.woff') format('woff'),
+    url('/assets/fonts/iconfonts.ttf') format('truetype'),
+    url('/assets/fonts/iconfonts.svg#iconfonts') format('svg');
+}
+
+[class^='icon-'],
+[class*=' icon-'] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin icon-styles {
+  font-family: "iconfonts";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  // speak: none; // only necessary if not using the private unicode range (firstGlyph option)
+  text-decoration: none;
+  text-transform: none;
+}
+
+%icon {
+  @include icon-styles;
+}
+
+@function icon-char($filename) {
+  $char: "";
+
+   @if $filename==acrobat-reader {
+      $char: "\E001";
+    }
+
+     @if $filename==amazon {
+      $char: "\E002";
+    }
+
+     @if $filename==arrow-left {
+      $char: "\E003";
+    }
+
+     @if $filename==arrow-right {
+      $char: "\E004";
+    }
+
+     @if $filename==audible {
+      $char: "\E005";
+    }
+
+     @if $filename==audio {
+      $char: "\E006";
+    }
+
+     @if $filename==bambooks {
+      $char: "\E007";
+    }
+
+     @if $filename==jumia {
+      $char: "\E008";
+    }
+
+     @if $filename==konga {
+      $char: "\E009";
+    }
+
+     @if $filename==okada-books {
+      $char: "\E00A";
+    }
+
+     @if $filename==patabah {
+      $char: "\E00B";
+    }
+
+     @if $filename==quote {
+      $char: "\E00C";
+    }
+
+     @if $filename==rovingheights {
+      $char: "\E00D";
+    }
+
+     @if $filename==witts-and-stratts {
+      $char: "\E00E";
+    }
+
+    @return $char;
+}
+
+@mixin icon($filename, $insert: before, $extend: true) {
+  &:#{$insert} {
+    @if $extend {
+      @extend %icon;
+    }
+
+    @else {
+      @include icon-styles;
+    }
+
+    content: icon-char($filename);
+  }
+}
+
+.icon-acrobat-reader {
+    @include icon(acrobat-reader);
+  }
+
+  .icon-amazon {
+    @include icon(amazon);
+  }
+
+  .icon-arrow-left {
+    @include icon(arrow-left);
+  }
+
+  .icon-arrow-right {
+    @include icon(arrow-right);
+  }
+
+  .icon-audible {
+    @include icon(audible);
+  }
+
+  .icon-audio {
+    @include icon(audio);
+  }
+
+  .icon-bambooks {
+    @include icon(bambooks);
+  }
+
+  .icon-jumia {
+    @include icon(jumia);
+  }
+
+  .icon-konga {
+    @include icon(konga);
+  }
+
+  .icon-okada-books {
+    @include icon(okada-books);
+  }
+
+  .icon-patabah {
+    @include icon(patabah);
+  }
+
+  .icon-quote {
+    @include icon(quote);
+  }
+
+  .icon-rovingheights {
+    @include icon(rovingheights);
+  }
+
+  .icon-witts-and-stratts {
+    @include icon(witts-and-stratts);
+  }
+
+  

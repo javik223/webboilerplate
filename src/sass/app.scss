@@ -1,0 +1,449 @@
+@import 'settings';
+@import 'foundation';
+
+// Foundation classes & modules
+@include foundation-global-styles;
+// @include foundation-flex-classes;
+@include foundation-visibility-classes;
+// @include foundation-flex-grid;
+@include foundation-xy-grid-classes;
+@include foundation-grid;
+@include foundation-button;
+@include foundation-typography;
+@include foundation-typography-helpers;
+@include foundation-prototype-spacing;
+// @include foundation-prototype-position;
+// @include foundation-forms;
+
+// Utility Variables
+$blue: #3549a0;
+
+// Components
+@import 'hamburger-menu';
+@import 'components/iconfonts';
+
+// Utility Classes
+.min-v100 {
+  min-height: 100vh;
+}
+
+.text-serif {
+  font-family: 'Baskerville 10 Pro', Georgia, 'Times New Roman', Times, serif;
+}
+
+.text-sans {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  color: gray;
+  overflow-x: hidden;
+}
+
+p {
+  font-size: 1.2em;
+}
+
+.container {
+  width: 100%;
+}
+
+.menu {
+  position: fixed;
+  left: rem-calc(8);
+  top: rem-calc(8);
+  padding: rem-calc(8);
+  cursor: pointer;
+  z-index: 10000;
+
+  @include breakpoint(medium up) {
+    left: rem-calc(20);
+    top: rem-calc(20);
+    padding: rem-calc(20);
+  }
+
+  &.alt {
+    a {
+      color: $blue;
+    }
+
+    .hamburger-menu,
+    .hamburger-menu:before,
+    .hamburger-menu:after {
+      background-color: $blue;
+    }
+
+    .hamburger-menu.animate {
+      background-color: rgba($blue, 0);
+    }
+  }
+}
+
+.landing {
+  background-image: url('/assets/img/adenike.jpg');
+  background-repeat: no-repeat;
+  background-position: 85% top;
+  background-size: cover;
+  min-height: 100vh;
+  min-width: 100vw;
+  overflow-y: hidden;
+  // background-attachment: fixed;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: rem-calc(30);
+  padding-bottom: rem-calc(60);
+  color: $white;
+
+  div {
+    flex: 1;
+  }
+
+  @include breakpoint(medium up) {
+    background-position: center center;
+  }
+
+  .adenike-title {
+    width: 100%;
+
+    @include breakpoint(medium up) {
+      width: 70%;
+    }
+
+    @include breakpoint(large up) {
+      width: 50%;
+    }
+  }
+}
+
+.nav {
+  position: absolute;
+  top: rem-calc(60);
+  width: 50vh;
+  left: rem-calc(20);
+  user-select: none;
+  visibility: hidden;
+
+  &:hover {
+    a:not(:hover) {
+      opacity: 0.5;
+    }
+  }
+
+  ul {
+    margin-left: 0;
+  }
+
+  li {
+    list-style-type: none;
+    margin-bottom: rem-calc(8);
+    margin: 0;
+    cursor: pointer;
+  }
+
+  a {
+    display: inline-block;
+    padding: 0;
+    padding-top: rem-calc(8);
+    padding-bottom: rem-calc(8);
+    color: $white;
+    letter-spacing: rem-calc(2);
+    text-transform: uppercase;
+    font-weight: bold;
+    border-bottom: rem-calc(1) groove $white;
+    transition: all 0.3s ease-out;
+    transform-origin: top left;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+
+$paddings: (10, 20, 30, 40, 50, 60, 70, 80, 90, 100);
+
+@each $padding in $paddings {
+  .padding-top-#{$padding} {
+    padding-top: rem-calc($padding);
+  }
+
+  .padding-bottom-#{$padding} {
+    padding-bottom: rem-calc($padding);
+  }
+
+  .padding-#{$padding} {
+    padding: rem-calc($padding);
+  }
+}
+
+.bio,
+.gallery {
+  @include xy-grid-container();
+  @extend .min-v100;
+  padding: rem-calc(16);
+  padding-top: rem-calc(20);
+
+  @include breakpoint(medium up) {
+    padding-top: rem-calc(100);
+  }
+
+  .text {
+  }
+
+  .image {
+    margin-bottom: rem-calc(40);
+  }
+}
+
+.gallery {
+  background-color: $blue;
+  color: $white;
+}
+
+.around-town {
+  a {
+    float: left;
+    text-align: center;
+  }
+  img {
+    max-height: rem-calc(400);
+    // width: auto !important;
+    border: rem-calc(16) solid $white;
+    box-shadow: rem-calc(8) rem-calc(8) rem-calc(16) rgba($black, 0.4);
+    transition: all 0.3s ease-out;
+    // display: block;
+    margin: auto auto;
+
+    &:hover {
+      transform: rotate(3deg);
+    }
+  }
+
+  p {
+    font-size: rem-calc(14);
+    color: rgba($white, 0.8);
+    display: block;
+    padding-top: rem-calc(32);
+  }
+}
+
+.the-book {
+  @extend .min-v100;
+  background-color: #d2d1d4;
+  width: 100%;
+  padding: rem-calc(20);
+  padding-top: rem-calc(80);
+  padding-bottom: rem-calc(80);
+
+  @include breakpoint(medium up) {
+    padding: rem-calc(80);
+    padding-top: rem-calc(160);
+  }
+
+  .text {
+    @include breakpoint(small) {
+      padding-left: rem-calc(40);
+      padding-right: rem-calc(40);
+    }
+  }
+}
+
+.quote-symbol {
+  display: inline-block;
+  margin: auto auto;
+  color: red;
+
+  @include breakpoint(medium up) {
+    font-size: rem-calc(80);
+  }
+}
+
+@each $number in (1, 2, 3, 4, 5, 6, 7, 8) {
+  .icon-#{$number}x {
+    font-size: rem-calc(16 * $number);
+  }
+}
+
+.button {
+  min-width: rem-calc(300);
+  border-radius: rem-calc(8);
+  margin-left: rem-calc(8);
+  margin-right: rem-calc(8);
+  cursor: pointer;
+
+  &:active,
+  &:focus {
+    outline: none;
+  }
+
+  &.preview {
+    padding: 0;
+
+    .icon {
+      padding: rem-calc(16);
+    }
+
+    h5 {
+      padding: rem-calc(16);
+      margin-bottom: 0;
+    }
+  }
+
+  .icon {
+    float: left;
+    padding-right: rem-calc(20);
+    border-right: 1px solid $white;
+    margin-right: rem-calc(20);
+  }
+}
+
+.slick-slide {
+  cursor: grab !important;
+}
+
+.quotes {
+  position: relative;
+}
+
+.quotes-carousel,
+.around-town {
+  &__arrows {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: rem-calc(32);
+    width: 100%;
+
+    @include breakpoint(medium up) {
+      font-size: rem-calc(60);
+    }
+
+    .icon-arrow-left,
+    .icon-arrow-right {
+      position: absolute;
+      top: 50%;
+      padding: rem-calc(8) 0;
+      cursor: pointer;
+    }
+
+    .icon-arrow-right {
+      right: 0;
+    }
+  }
+}
+
+.quote {
+  position: relative;
+
+  h4 {
+    border: 2px solid $white;
+    border-radius: rem-calc(8);
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    padding: rem-calc(30);
+    position: relative;
+    margin-bottom: rem-calc(30);
+
+    &:after {
+      position: absolute;
+      bottom: rem-calc(-16);
+      left: 50%;
+      transform: translateX(-50%);
+      @include css-triangle(rem-calc(16), $white, 'down');
+    }
+  }
+
+  cite {
+    font-weight: bold;
+  }
+
+  img {
+    width: rem-calc(60);
+    height: rem-calc(60);
+    float: none;
+    margin: rem-calc(16) auto;
+    border-radius: 50%;
+    border: rem-calc(3) solid rgba(white, 0.2);
+
+    @include breakpoint(medium up) {
+      width: rem-calc(80);
+      height: rem-calc(80);
+    }
+  }
+}
+
+.text-spaced {
+  letter-spacing: rem-calc(4);
+  text-transform: uppercase;
+}
+
+.buy {
+  a {
+    color: $dark-gray;
+    padding: rem-calc(16);
+    display: inline-block;
+    margin: auto auto;
+    transition: all 0.3s ease-out;
+
+    &:hover {
+      color: $primary-color;
+      transform: scale(1.1);
+    }
+  }
+}
+
+.amputees-united {
+  background-color: $blue;
+  color: $white;
+}
+
+.contact {
+  h2,
+  h5,
+  p {
+    display: block;
+    float: left;
+    width: 100%;
+  }
+}
+
+// Slick Carousel
+.slick-dots {
+  width: 100%;
+
+  li {
+    width: 18px;
+    height: 18px;
+    background-color: gray;
+    overflow: hidden;
+    border-radius: 50%;
+    display: inline-block;
+    margin: rem-calc(10);
+    user-select: none;
+    cursor: pointer;
+
+    button {
+      color: transparent;
+      user-select: none;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    &.slick-active {
+      background-color: $blue;
+      border: rem-calc(1) solid rgba($white, 0.2);
+    }
+  }
+}
+
+.slick-dots {
+  margin-top: rem-calc(20);
+}
+.relative {
+  position: relative;
+}

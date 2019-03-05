@@ -1,0 +1,12 @@
+version: '3.3'
+services:
+  web:
+    image: nginx:1.15.8-alpine
+    container_name: adenike_web
+    volumes:
+      - ./dist:/usr/share/nginx/html
+    ports:
+      - 8099:80
+    environment:
+      - NGINX_HOST="adenikeoyetunde.com"
+      - NGINX_PORT="80"

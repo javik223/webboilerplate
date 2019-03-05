@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    meta(name="google-site-verification" content="EcdJ1_00K_hoXGoLkMEo1uCGgEQikMXCBfpFWa9VfGM")
+    title Adenike
+    link(href="https://unpkg.com/aos@2.3.1/dist/aos.css", rel="stylesheet")
+    link(href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css", rel="stylesheet")
+
+    link(href="https://cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.7.0/css/justifiedGallery.min.css", rel="stylesheet")
+
+    link(href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.12/css/lightgallery.min.css", rel="stylesheet")
+
+
+
+    link(href="/assets/css/app.css", rel="stylesheet")
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/img/icons.ico/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/img/icons.ico/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/img/icons.ico/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/img/icons.ico/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/img/icons.ico/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/img/icons.ico/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/img/icons.ico/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/img/icons.ico/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/icons.ico/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/assets/img/icons.ico/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/icons.ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/img/icons.ico/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/icons.ico/favicon-16x16.png">
+    <link rel="manifest" href="/assets/img/icons.ico/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+
+  body
+    .menu
+      .hamburger-menu
+      nav.nav
+        ul
+          li
+            a(href="#adenike-thebook" title="Adenike The Book") Adenike-The Book
+          li
+            a(href="#where-to-buy" title="Buy The Book") Buy The Book
+          li
+            a(href="#gallery" title="Gallery") Gallery
+          li
+            a(href="#her" title="Her") Her
+          li
+            a(href="#amputees-united", title="Amputees United")  Amputees United
+          li
+            a(href="#contact", title="Contact")  Contact
+
+    .landing
+      div
+        img(data-aos="fade-up", data-aos-duration="1000", data-aos-ease="ease-out", src="/assets/img/adenike-title.svg", alt="Adenike").adenike-title
+        h2(data-aos="fade-up", data-aos-duration="1500").medium-6.large-8.text-serif: em A life of strength, faith, evolution &amp; triumph
+
+  .the-book(data-0="transform:scale(0.9);", data-10p-top="transform:scale(1)")#adenike-thebook
+    .grid-x
+      .medium-5.image
+        img(data-aos="fade-up", data-aos-duration="1000", src="/assets/img/adenike-the-book.png", alt="Adenike – Her Story, Your Movie, His Glory")
+      .small-10.small-offset-1.medium-6.large-5.medium-offset-1.padding-top-20.text-serif(data-aos="fade-up", data-aos-duration="3000", data-aos-ease="ease-out")
+        img(src="/assets/img/adenike-title.svg", alt="Adenike", width="200")
+        h4.padding-bottom-30 Her Story, Your Movie, His Glory
+        p This is the story of a young girl whose life’s trajectory changed one fateful day owing to a fall. It chronicles her journey through denial, strength, resilience, confusion, pain, tears, brokenness, surrender, and finally, freedom.
+
+        p The book also contains tales about hope, faith and charity found in the least expected places, the role of presents parents and finding God through one's continued process to evolve.
+
+        p You’ll see her finding herself, coming into her own, fighting for her life. You’ll dream her dreams and read about determination.
+
+    // Quotes and praise for the book
+    include ./_quotes
+
+    .grid-x.padding-top-60.text-center.quotes
+      .grid-x.small-12
+        h3.small-12.text-center.text-spaced.text-serif What they said
+        h1.icon.icon-quote.quote-symbol.padding-20(data-start="transform:scale(0.7);" data-top-bottom="transform:scale(1);")
+
+      .grid-x.quotes-carousel.small-12.medium-8.large-6.medium-centered.padding-top-30
+        each quote in quotes
+          .quote
+            h4 #{quote.quote}
+            if (quote.instagram_photo_url !== '')
+              img(src=quote.instagram_photo_url title=quote.cite)
+            cite #{quote.cite}
+            if (quote.instagram_handle !== '')
+              small @#{quote.instagram_handle}
+
+      .quotes-carousel__arrows
+        div.icon.icon-arrow-left
+        div.icon.icon-arrow-right
+
+
+    .grid-x.book-preview.padding-top-100
+      h2.small-12.text-center.padding-bottom-30.text-serif Preview the book
+      .cell.text-center(data--10p="transform:scale(0.5);" data-center-center="transform:scale(2);")
+        a.button.rounded.text-left.preview(href="https://s3.amazonaws.com/adenike/Adenike+%E2%80%93+Abridged.pdf" title="Adenike Abridged" target="_blank")
+          .icon.icon-acrobat-reader.icon-3x
+          h5 Read Sample Chapters
+        a.button.rounded.text-left.preview(href="https://s3.amazonaws.com/adenike-audio/3-+INTRODUCTION.mp3" target="_blank")
+          .icon.icon-audio.icon-3x
+          h5 Listen to Sample Audio Book
+
+    .grid-x.book-preview.padding-top-100.buy#where-to-buy
+      h3.small-12.text-center.padding-bottom-30.text-serif.text-spaced Where to buy
+      -
+        var stores = [
+          {
+            icon: 'amazon',
+            title: 'Adenike – Her Story, Your Movie, His Glory on Amazon',
+            url: 'https://www.amazon.com/Ad%C3%A9n%C3%ACk%C3%A9-Story-Your-Movie-Glory/dp/1793235813?keywords=adenike&qid=1547711864&sr=8-8&ref=sr_1_8'
+          },
+          {
+            icon: 'konga',
+            title: 'Adenike – Her Story, Your Movie, His Glory on Konga',
+            url: 'https://www.konga.com/product/adenike-hardback-4155901'
+          },
+          {
+            icon: 'rovingheights',
+            title: 'Adenike – Her Story, Your Movie, His Glory on RovingHeights',
+            url: 'https://rhbooks.com.ng/product/adenike/',
+          },
+          //- {
+          //-   icon: 'jumia',
+          //-   title: 'Adenike – Her Story, Your Movie, His Glory on Jumia',
+          //-   url: 'http://nowhere'
+          //- },
+          {
+            icon: 'okada-books',
+            title: 'Adenike – Her Story, Your Movie, His Glory on Okada Books',
+            url: 'https://okadabooks.com/book/about/ad_n_k/25281'
+          },
+          //- {
+          //-   icon: 'audible',
+          //-   title: 'Adenike – Her Story, Your Movie, His Glory on Audible',
+          //-   url: 'http://nowhere'
+          //- },
+          {
+            icon: 'patabah',
+            title: 'Adenike – Her Story, Your Movie, His Glory on Patabah',
+            url: 'http://patabah.com/'
+          },
+          {
+            icon: 'bambooks',
+            title: 'Adenike – Her Story, Your Movie, His Glory on Bambooks',
+            url: 'https://bambooks.io/Book/BookDetail/Adenike/11352',
+          },
+        ]
+
+      .grid-x.small-12.text-center
+        each store, index in stores
+          a(class=`icon icon-3x icon-${store.icon}`, href=store.url, title=store.title, target="_blank")
+
+  .gallery.grid-container.full#gallery
+    .grid-x.padding-top-60.text-center.quotes
+      .grid-x.small-12
+        h3.small-12.text-center.text-spaced.text-serif Gallery
+        h3 &nbsp;
+        p.small-12.text-center.text-spaced.text-serif Around town
+        .grid-container
+          .grid-x.relative
+            .cell.medium-12.around-town
+              include ./_around-town
+
+              each arpicture in aroundTownPictures
+                -
+                  let pictureSrc = `/assets/img/gallery/around-town/${arpicture.fileName}`
+                a(title=arpicture.title)
+                  img(src=pictureSrc, alt=arpicture.title)
+                  p= arpicture.title
+            .around-town__arrows
+              div.icon.icon-arrow-left
+              div.icon.icon-arrow-right
+    .grid-x.padding-top-60.text-center.quotes
+      .grid-x.small-12
+        p.small-12.text-center.text-spaced.text-serif Book Launch
+        .cell.medium-12.event-gallery
+          include ./_event
+
+          each picture in pictures
+            -
+              let pictureSrc = `/assets/img/gallery/book-launch/${picture.fileName}`
+            a(href=pictureSrc, title=picture.title)
+              img(src=`/assets/img/gallery/book-launch/thumbnails/${picture.fileName}`, alt=picture.title)
+
+
+
+
+
+  .bio#her
+    .grid-x.padding-top-100.padding-bottom-100
+      .medium-5.image(data-start="transform:scale(0.8);" data-top="transform:scale(1);")
+        img(src="/assets/img/adenike-2.jpg", alt="Adenike")
+      .medium-5.medium-offset-1.text.text-serif
+        h2 About Adenike
+        p &nbsp;
+        p Adenike Oyetunde is a lawyer with almost ten years at the Nigerian Bar Association. Though not in active practice, she delved into the world of media (radio) until a few months ago. She had the only legal show on the air taking on topical issues and helping to solve numerous problems while giving free legal counsel alone or with the help of others.
+
+        p She had been nominated for several media awards, winning some and getting others for recognition on the job.
+
+        p Adenike's passions include driving conversations around the plight of disability in Nigeria. This passion has led her to participate in and organise initiatives and social groups, specifically for amputees and other disabilities.
+
+        p Adenike in 2017, was a speaker at the TedX Gbagada, Lagos speaking on Philanthropy and the role of empathy in the human society.
+
+        p Her work has earned her several platforms, spanning for hosting events, moderating several sessions and been part of many panels.
+
+
+  .amputees-united#amputees-united
+    .grid-x
+      .medium-5.image
+        img(data-anchor-target="#amputees-united", data-start="transform:scale(0.8);", data-top="transform:scale(1);", src="/assets/img/adenike-amputees-united.jpg", alt="Adenike – Amputees United")
+      .small-10.small-offset-1.medium-6.large-5.medium-offset-1.padding-top-20.text-serif.padding-top-100.padding-bottom-100
+        img(src="/assets/img/amputees-united.svg", alt="Amputees United", width="200")
+        h4.padding-bottom-30 Limb-loss is not the end!
+        p Amputees United Initiative is an initiative dedicated to enhancing the quality of life for amputees. With the support of the public, we are helping amputees live well with limb loss, raising awareness about management of limb loss and providing a platform to help them live their full and thriving lives.
+
+        p The initiative was birthed from a place of personal journey to provide a safe haven for amputees, fresh and old, where journeys will be shared and experience heard, to strengthen each other, as these special humans continue to clamour for an inclusive society geared towards preparing Lagos and Nigeria towards the United Nations path to achieving an inclusive society in line with SDG 17.
+
+        p Amputees United Initiative also creates a platform for persons with special needs to discuss matters affecting them specifically; ranging from educational needs, medical needs and infrastructural needs.
+
+        p The ultimate goal of the initiative is to create a facility encompassing amenities to promote an adaptive lifestyle (learning to use prosthetic limbs), establish recreational centres that are suitable for people with special needs, a gym specifically for PWDs; equipped with cycling and swimming facilities.
+
+  .contact.padding-top-100.padding-bottom-100.grid-container#contact
+    .grid-x.cell.padding-top-100.small-10.small-offset-1
+      .medium-6.large-4
+        h2 Contact
+        h5.padding-top-40 Speaking & Author Engagement
+        p me@adenikeoyetunde.com
+
+      //- .medium-6.large-4.text-center
+      //-   h2 &nbsp;
+      //-   p.padding-top-40 credits
+
+      .grid-x.cell.padding-top-50
+        p
+          small Designed with love by: <br>
+            span.icon.icon-witts-and-stratts
+            | &nbsp; Witts & Stratts
+
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+  script(src="https://unpkg.com/aos@2.3.1/dist/aos.js")
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js")
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js")
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.min.js")
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js")
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.7.0/js/jquery.justifiedGallery.min.js")
+
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.12/js/lightgallery-all.min.js")
+
+
+
+
+  script(src="/assets/js/app.js")
+  script(src="https://www.googletagmanager.com/gtag/js?id=UA-134754575-1" async)
+  script.
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-134754575-1');
